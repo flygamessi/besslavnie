@@ -7,3 +7,10 @@
 @media(min-width:901px){.entry-desktop-nav a{font-size:max(12px,calc(17*var(--u)));min-height:44px}.entry-header-cta{font-size:max(12px,calc(17*var(--u)));min-width:170px}}
 @media(max-width:900px){.entry-responsive-scene{height:calc(630*var(--m))}.entry-responsive-scene>img{object-fit:fill}.entry-menu-toggle{min-width:44px;min-height:44px}.entry-primary-cta,.entry-secondary-cta{min-height:44px}}
 @media(min-width:1921px){:is(.entry-site-header,.entry-hero){--u:calc(1920px / 1672)}.entry-header-spacer{height:calc(110 * 1920px / 1672)}}
+@media (max-width:900px){
+  .entry-site-header{
+    position:sticky;
+    top:0;
+    z-index:100;
+  }
+}
