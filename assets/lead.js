@@ -134,7 +134,12 @@
     if (!payload.situation) delete payload.situation;
     payload.consent_at = new Date().toISOString();
     try {
-      await deliverLead(payload);
+      await Promise.race([
+  deliverLead(payload),
+  new Promise(function (resolve) {
+    window.setTimeout(resolve, 1500);
+  })
+]);
       showLeadSuccess(payload, session, page, true);
     } catch (error) {
       // Requested UX: HTTP/network failures use the same confirmation, without proving delivery.
